@@ -16,7 +16,7 @@ public class MemberService {
 	public boolean checkMemberId(String memberId) {
 		
 		// 커넥션 설정
-		Connection conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+		Connection conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 		
 		System.out.println("[debug] MemberService.checkMemberId(String memberId) => 중복 검사할 아이디 : " + memberId);
 		
@@ -59,7 +59,7 @@ public class MemberService {
 	// 회원 가입(트랜잭션이 따로 구분되지 않는, 한 개의 작업만 수행한다 여기기에 오토 커밋 설정을 바꾸지 않음)
 	public boolean addMember(String memberId, String memberPw) {
 		// 커넥션 설정
-		Connection conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+		Connection conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 		
 		System.out.println("[debug] MemberService.addMember(String memberId, String memberPw) => 가입할 회원 아이디 : " + memberId);
 		System.out.println("[debug] MemberService.addMember(String memberId, String memberPw) => 가입할 회원 비밀번호 : " + memberPw);
@@ -104,7 +104,7 @@ public class MemberService {
 	public boolean removeMember(String memberId, String memberPw) {
 		
 		// 커넥션 설정
-		Connection conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+		Connection conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 		try {
 			
 			// 트랜잭션 적용을 위해 오토 커밋 false 설정
@@ -166,7 +166,7 @@ public class MemberService {
 		Member loginMember = null;
 		Connection conn = null;
 		try {
-			conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+			conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 			memberDao = new MemberDao();
 			loginMember = memberDao.login(conn, member);
 		} catch(Exception e) {

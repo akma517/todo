@@ -68,7 +68,7 @@ public class CalendarService {
 	      List<Todo> list = null;
 	      Connection conn = null;
 	      try {
-	         conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+	         conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 	         todoDao = new TodoDao();
 	         Todo todo = new Todo(); 
 	         // memberId <- 매개변수로 입력받자

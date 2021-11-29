@@ -21,7 +21,7 @@ public class TodoService {
 		Connection conn = null;
 		
 		try {
-			conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+			conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 			todoDao = new TodoDao();
 			todoList = todoDao.selectTodoList(conn, todo);
 			
@@ -46,7 +46,7 @@ public class TodoService {
 		int confirm = 0;
 		
 		try {
-			conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+			conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 			todoDao = new TodoDao();
 			confirm = todoDao.insertTodo(conn, todo);
 			
@@ -72,7 +72,7 @@ public class TodoService {
 		int confirm = 0;
 		
 		try {
-			conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+			conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 			todoDao = new TodoDao();
 			confirm = todoDao.updateTodo(conn, todo);
 			
@@ -99,7 +99,7 @@ public class TodoService {
 		
 		try {
 			
-			conn = DBUtil.getConnection("jdbc:mariadb://127.0.0.1:3306/todo", "root", "java1004");
+			conn = DBUtil.getConnection("jdbc:mariadb://13.125.215.197:3306/todo", "user_db", "db1984@");
 			todoDao = new TodoDao();
 			confirm = todoDao.deleteTodoOne(conn, todo);
 			
